@@ -49,7 +49,7 @@ Whether you're unsure if you should go for a run or stay in for a movie, our AI 
 
 | **Home Dashboard** | **AI Analysis Result** |
 |:---:|:---:|
-| ![Home](assets/images/dashboard-preview.png) | ![Result](assets/images/result-preview.png) |
+| ![Home](assets/images/home.png) | ![Result](assets/images/result.png) |
 
 ---
 
