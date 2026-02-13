@@ -49,7 +49,7 @@ Whether you're unsure if you should go for a run or stay in for a movie, our AI 
 
 | **Home Dashboard** | **AI Analysis Result** |
 |:---:|:---:|
-| ![Home](https://placehold.co/600x400?text=Dashboard+Screenshot) | ![Result](https://placehold.co/600x400?text=Result+Screenshot) |
+| ![Home](assets/images/dashboard-preview.png) | ![Result](assets/images/result-preview.png) |
 
 ---
 
