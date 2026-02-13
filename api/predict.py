@@ -99,6 +99,17 @@ class handler(BaseHTTPRequestHandler):
                     }
                     collection.insert_one(record)
                     
+                    # Keep only last 5
+                    count = collection.count_documents({})
+                    if count > 5:
+                        # Find the 5th most recent timestamp
+                        recent_docs = list(collection.find().sort('timestamp', -1).limit(5))
+                        if len(recent_docs) == 5:
+                           oldest_kept = recent_docs[-1]['timestamp']
+                           # Delete anything older than the oldest kept (or simply not in the list of kept IDs)
+                           kept_ids = [doc['_id'] for doc in recent_docs]
+                           collection.delete_many({'_id': {'$nin': kept_ids}})
+                    
                     # We can't easily invalidate Node cache from here without shared storage (Redis)
                     # But for now, we just save.
                 except Exception as e:

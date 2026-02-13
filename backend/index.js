@@ -104,6 +104,13 @@ app.post('/api/predict', async (req, res) => {
 
                 await newPrediction.save();
 
+                // Keep only the latest 5 predictions
+                const allPredictions = await Prediction.find().sort({ timestamp: -1 });
+                if (allPredictions.length > 5) {
+                    const idsToDelete = allPredictions.slice(5).map(p => p._id);
+                    await Prediction.deleteMany({ _id: { $in: idsToDelete } });
+                }
+
                 // Clear history cache
                 appCache.del('/api/history');
 
@@ -127,7 +134,7 @@ app.post('/api/predict', async (req, res) => {
 // History Route
 app.get('/api/history', cacheMiddleware(60), async (req, res) => {
     try {
-        const history = await Prediction.find().sort({ timestamp: -1 }).limit(10);
+        const history = await Prediction.find().sort({ timestamp: -1 }).limit(5);
         res.json(history);
     } catch (err) {
         res.status(500).json({ error: 'Server Error' });
