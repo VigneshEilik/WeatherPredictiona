@@ -8,8 +8,6 @@ import Footer from './components/Footer';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import AmbientParticles from './components/AmbientParticles';
 import MouseTrail from './components/MouseTrail';
-import History from './components/History';
-import './History.css';
 import './App.css';
 
 function App() {
@@ -125,7 +123,7 @@ function App() {
           )}
         </div>
 
-        <History />
+
 
         <Features />
         <Footer />
