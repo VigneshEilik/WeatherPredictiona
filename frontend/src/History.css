@@ -1,0 +1,125 @@
+/* History Section Styling */
+.history-section {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+    animation: fadeIn 1s ease-out;
+}
+
+.history-table-container {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.history-table th {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-md);
+    text-align: left;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.history-table td {
+    padding: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.history-table tr {
+    transition: background 0.3s ease;
+    animation: slideInRight 0.5s ease-out backwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.history-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.sunny {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.status-badge.rainy {
+    background: rgba(79, 172, 254, 0.15);
+    color: #4facfe;
+    border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.status-badge.overcast {
+    background: rgba(255, 255, 255, 0.15);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.result-badge {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.result-badge.go {
+    background: rgba(0, 242, 254, 0.15);
+    color: #00f2fe;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+.result-badge.stay {
+    background: rgba(245, 87, 108, 0.15);
+    color: #f5576c;
+    box-shadow: 0 0 10px rgba(245, 87, 108, 0.2);
+}
+
+.confidence-pill {
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: inline-block;
+    min-width: 50px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,40 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "backend/index.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "api/predict.py",
+            "use": "@vercel/python",
+            "config": {
+                "runtime": "python3.9"
+            }
+        },
+        {
+            "src": "frontend/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "dist"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/predict",
+            "dest": "/api/predict.py"
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/frontend/$1"
+        }
+    ],
+    "env": {
+        "PYTHON_VERSION": "3.9"
+    }
+}

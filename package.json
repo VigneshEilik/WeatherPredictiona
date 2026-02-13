@@ -1,0 +1,18 @@
+{
+    "name": "mern-weather-app",
+    "version": "1.0.0",
+    "description": "MERN Stack Weather Application",
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd backend && npm start",
+        "client": "cd frontend && npm run dev",
+        "install-client": "cd frontend && npm install",
+        "install-server": "cd backend && npm install",
+        "install-all": "npm install && npm run install-client && npm run install-server"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.2"
+    },
+    "author": "",
+    "license": "ISC"
+}

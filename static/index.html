@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Predictor AI - Smart Weather Decision Making</title>
+    <meta name="description" content="AI-powered climate prediction system to help you make smart outdoor activity decisions">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" fill="url(#gradient)" opacity="0.2"/>
+                    <path d="M20 8C13.4 8 8 13.4 8 20C8 26.6 13.4 32 20 32C26.6 32 32 26.6 32 20C32 13.4 26.6 8 20 8ZM20 29C15 29 11 25 11 20C11 15 15 11 20 11C25 11 29 15 29 20C29 25 25 29 20 29Z" fill="url(#gradient)"/>
+                    <circle cx="20" cy="20" r="6" fill="url(#gradient)"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="8" y1="8" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#667eea"/>
+                            <stop offset="100%" stop-color="#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>Climate Predictor AI</span>
+            </div>
+            <div class="header-badge">
+                <span class="badge-dot"></span>
+                ML Powered
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">
+                Make Smart Decisions with
+                <span class="gradient-text">AI-Powered Climate Insights</span>
+            </h1>
+            <p class="hero-subtitle">
+                Our advanced machine learning model analyzes weather conditions to help you decide if it's a great day for outdoor activities
+            </p>
+        </section>
+
+        <!-- Main Card -->
+        <div class="main-card">
+            <div class="card-header">
+                <h2>Weather Analysis</h2>
+                <div class="model-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2L10.5 7L15 8L10.5 9L8 14L5.5 9L1 8L5.5 7L8 2Z" fill="currentColor"/>
+                    </svg>
+                    Decision Tree Model
+                </div>
+            </div>
+
+            <!-- Input Form -->
+            <form id="predictionForm" class="prediction-form">
+                <div class="form-grid">
+                    <!-- Outlook -->
+                    <div class="form-group">
+                        <label for="outlook">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.5 15.5L14 14M6 6L4.5 4.5M15.5 4.5L14 6M6 14L4.5 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Sky Outlook
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="outlook" name="outlook" required>
+                                <option value="">Choose outlook...</option>
+                                <option value="sunny">☀️ Sunny</option>
+                                <option value="overcast">☁️ Overcast</option>
+                                <option value="rainy">🌧️ Rainy</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Temperature -->
+                    <div class="form-group">
+                        <label for="temp">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <rect x="8" y="2" width="4" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="10" cy="16" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Temperature (°C)
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="number" id="temp" name="temp" placeholder="e.g., 25" min="-20" max="50" step="0.1" required>
+                            <span class="input-unit">°C</span>
+                        </div>
+                        <div class="range-indicator">
+                            <span>-20°C</span>
+                            <span>50°C</span>
+                        </div>
+                    </div>
+
+                    <!-- Humidity -->
+                    <div class="form-group">
+                        <label for="humidity">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 2C10 2 4 8 4 12C4 15.31 6.69 18 10 18C13.31 18 16 15.31 16 12C16 8 10 2 10 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                            Humidity (%)
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="number" id="humidity" name="humidity" placeholder="e.g., 65" min="0" max="100" step="1" required>
+                            <span class="input-unit">%</span>
+                        </div>
+                        <div class="range-indicator">
+                            <span>0%</span>
+                            <span>100%</span>
+                        </div>
+                    </div>
+
+                    <!-- Windy -->
+                    <div class="form-group">
+                        <label for="windy">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M2 10H12C13.66 10 15 8.66 15 7C15 5.34 13.66 4 12 4C10.34 4 9 5.34 9 7M2 14H14C15.66 14 17 12.66 17 11C17 9.34 15.66 8 14 8M2 6H8C9.1 6 10 6.9 10 8C10 9.1 9.1 10 8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Wind Condition
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="windy" name="windy" required>
+                                <option value="">Choose condition...</option>
+                                <option value="no">🍃 Calm (No Wind)</option>
+                                <option value="yes">💨 Windy</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Analyze Weather</span>
+                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Analyzing weather conditions...</p>
+            </div>
+
+            <!-- Results -->
+            <div id="results" class="results" style="display: none;">
+                <div class="result-header">
+                    <div id="resultIcon" class="result-icon"></div>
+                    <h3 id="resultText" class="result-text"></h3>
+                </div>
+                
+                <div class="confidence-section">
+                    <div class="confidence-label">
+                        <span>Confidence Level</span>
+                        <span id="confidenceValue" class="confidence-value"></span>
+                    </div>
+                    <div class="confidence-bar">
+                        <div id="confidenceProgress" class="confidence-progress"></div>
+                    </div>
+                </div>
+
+                <div class="probabilities">
+                    <div class="probability-item">
+                        <div class="probability-header">
+                            <span>🏠 Stay Indoors</span>
+                            <span id="indoorProb" class="probability-value"></span>
+                        </div>
+                        <div class="probability-bar">
+                            <div id="indoorProgress" class="probability-progress indoor"></div>
+                        </div>
+                    </div>
+                    <div class="probability-item">
+                        <div class="probability-header">
+                            <span>🌞 Go Outdoors</span>
+                            <span id="outdoorProb" class="probability-value"></span>
+                        </div>
+                        <div class="probability-bar">
+                            <div id="outdoorProgress" class="probability-progress outdoor"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="new-prediction-btn" onclick="resetForm()">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 9C2 5.13 5.13 2 9 2C12.87 2 16 5.13 16 9C16 12.87 12.87 16 9 16C7.05 16 5.28 15.13 4.05 13.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M2 6V9H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    New Prediction
+                </button>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Powered</h3>
+                <p>Advanced Decision Tree algorithm trained on weather patterns</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Results</h3>
+                <p>Get real-time predictions in milliseconds</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Confidence Scores</h3>
+                <p>Transparent probability distributions for informed decisions</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by Machine Learning • Decision Tree Classifier</p>
+            <p class="footer-note">Built with Flask & Vanilla JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
