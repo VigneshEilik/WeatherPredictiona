@@ -3,15 +3,31 @@ const Header = ({ onLiveAnalysis }) => {
         <header className="header">
             <div className="logo">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="20" r="18" fill="url(#gradient)" opacity="0.2" />
-                    <path d="M20 8C13.4 8 8 13.4 8 20C8 26.6 13.4 32 20 32C26.6 32 32 26.6 32 20C32 13.4 26.6 8 20 8ZM20 29C15 29 11 25 11 20C11 15 15 11 20 11C25 11 29 15 29 20C29 25 25 29 20 29Z" fill="url(#gradient)" />
-                    <circle cx="20" cy="20" r="6" fill="url(#gradient)" />
                     <defs>
-                        <linearGradient id="gradient" x1="8" y1="8" x2="32" y2="32">
-                            <stop offset="0%" stopColor="#667eea" />
-                            <stop offset="100%" stopColor="#764ba2" />
+                        <linearGradient id="logoGradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stopColor="#4facfe" />
+                            <stop offset="100%" stopColor="#00f2fe" />
+                        </linearGradient>
+                        <linearGradient id="cloudGradient" x1="10" y1="10" x2="30" y2="30">
+                            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
+                            <stop offset="100%" stopColor="#e6e9f0" stopOpacity="0.8" />
                         </linearGradient>
                     </defs>
+
+                    {/* Sun/Background Glow */}
+                    <circle cx="28" cy="14" r="8" fill="url(#logoGradient)" opacity="0.8">
+                        <animate attributeName="opacity" values="0.8;1;0.8" duration="3s" repeatCount="indefinite" />
+                    </circle>
+
+                    {/* Cloud Shape */}
+                    <path d="M10 28C6.686 28 4 25.314 4 22C4 18.686 6.686 16 10 16C10.5 16 11 16.1 11.5 16.2C12.5 12.8 15.6 10.5 19 10.5C23.4 10.5 27 14.1 27 18.5C27 18.9 26.9 19.3 26.9 19.7C29.8 20.3 32 22.9 32 26C32 29.3 29.3 32 26 32H10"
+                        fill="url(#cloudGradient)" />
+
+                    {/* AI Circuit Connections */}
+                    <circle cx="14" cy="22" r="1.5" fill="#667eea" />
+                    <circle cx="20" cy="18" r="1.5" fill="#667eea" />
+                    <circle cx="24" cy="24" r="1.5" fill="#667eea" />
+                    <path d="M14 22L20 18M20 18L24 24M14 22L24 24" stroke="#667eea" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
                 </svg>
                 <span>Climate Predictor AI</span>
             </div>
